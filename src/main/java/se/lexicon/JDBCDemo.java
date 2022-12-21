@@ -15,8 +15,10 @@ public class JDBCDemo {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/lecture_db", "root", "1234");
             // connection to database lecture_db
             // password is the one we selected to open MySQl Workbench
+            // Connection is an autocloseable interface
 
             Statement statement= connection.createStatement();
+            //Statement is an autocloseable interface
 
             //String selectAllTasks= "select * from task";
 
@@ -30,6 +32,7 @@ public class JDBCDemo {
             // executeQuery() is used to execute SELECT query
             // executeUpdate() is used to execute UPDATE query
             ResultSet resultSet = statement.executeQuery(selectAllTasks);
+            //ResultSet is an autocloseable interface
 
             while (resultSet.next()){
 
